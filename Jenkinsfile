@@ -35,7 +35,7 @@ stage('build code') {
                 echo 'Analyzing....'
                 nexusArtifactUploader artifacts: [[artifactId: 'WebAppCal', 
 			  classifier: '',
-			  file: 'target/WebAppCal Maven Webapp-1.2.1.war', 
+			  file: '/var/lib/jenkins/workspace/pro pipeline/target/WebAppCal-1.2.1.war', 
 			  type: 'war']],
 			 credentialsId: 'nexus', 
 			 groupId: 'com.web.cal', 
