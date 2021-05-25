@@ -23,7 +23,12 @@ pipeline {
             }
       
 }
-
+stage('build code') {
+            steps {
+                echo 'building ..'
+		sh 'mvn clean install'
+            }
+        }
     
         stage('Nexus upload') {
             steps {
