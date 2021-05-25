@@ -17,7 +17,9 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                 echo 'Analyzing....'
-		sh sh 'mvn sonar:sonar -Dsonar.host.url=http://3.236.212.148:9000 -Dsonar.login=5f0d4c395b8e3ff0d5f26dc31f4876c10423412d'
+		sh 'mvn sonar:sonar \
+  -Dsonar.host.url=http://3.80.53.227:9000 \
+  -Dsonar.login=2fde63c787266cee5066de05fae118ef903e8d2a'
             }
         }
     }
