@@ -21,6 +21,35 @@ pipeline {
   -Dsonar.host.url=http://3.80.53.227:9000 \
   -Dsonar.login=2fde63c787266cee5066de05fae118ef903e8d2a'
             }
-        }
+      
+}
+
+    
+        stage('Nexus upload') {
+            steps {
+                echo 'Analyzing....'
+                nexusArtifactUploader artifacts: [[artifactId: 'WebAppCal', 
+			  classifier: '',
+			  file: 'target/WebAppCal Maven Webapp-1.2.1.war', 
+			  type: 'war']],
+			 credentialsId: 'nexus', 
+			 groupId: 'com.web.cal', 
+			 nexusUrl: '172.31.24.246:8081/nexus',
+			 nexusVersion: 'nexus2',
+			 protocol: 'http',
+			 repository: 'http://3.80.53.227:8081/nexus/content/repositories/releases', 
+			 version: '1.2.1'
+
+
+
+	
+
+	}}   
+    
+    
+    
+    
+    
+    
     }
 }
