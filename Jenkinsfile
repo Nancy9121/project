@@ -52,8 +52,8 @@ stage('build code') {
 {
 	steps {
 		echo 'deploying.....'
-    sshagent(['deploy_user']) {
-     sh 'scp /var/lib/jenkins/workspace/pro pipeline/target/WebAppCal-1.2.1.war ~/apache-tomcat-7.0.94/webapps/'
+    sshagent(['deploy_user1'])  {
+     sh 'scp /var/lib/jenkins/workspace/pro pipeline/target/WebAppCal-1.2.1.war centos@http://34.224.213.42:8000:~/apache-tomcat-7.0.94/webapps/'
     }
 }
 }
