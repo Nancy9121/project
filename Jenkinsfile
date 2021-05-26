@@ -45,14 +45,18 @@ stage('build code') {
 			 repository: 'http://3.80.53.227:8081/nexus/content/repositories/releases', 
 			 version: '1.2.1'
 
-
-
-	
-
-	}}   
+			}
+		}   
     
-    
-    
+    stage ('deploy to tomcat')
+{
+	steps {
+		echo deploying.....
+    sshagent(['deploy_user']) {
+     sh 'scp /var/lib/jenkins/workspace/pro pipeline/target/WebAppCal-1.2.1.war ~/apache-tomcat-7.0.94/webapps/'
+    }
+}
+}
     
     
     
