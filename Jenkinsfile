@@ -59,7 +59,7 @@ stage ('deploy to tomcat')
 		echo 'deploying.....'
 
 sshagent(['deploy_user1']) {
-    sh 'cp /var/lib/jenkins/workspace/pro pipeline/target/WebAppCal-1.2.1.war  centos@172.31.2.67:8000:~/apache-tomcat-7.0.94/webapps/'
+    sh 'cp /var/lib/jenkins/workspace/pro pipeline/target/WebAppCal-1.2.1.war  ~/apache-tomcat-7.0.94/webapps/'
 }
     }
 }
