@@ -39,10 +39,10 @@ stage('build code') {
 			  type: 'war']],
 			 credentialsId: 'nexus', 
 			 groupId: 'com.web.cal', 
-			 nexusUrl: '172.31.24.246:8081/nexus',
+			 nexusUrl: '172.31.2.67:8081/nexus',
 			 nexusVersion: 'nexus2',
 			 protocol: 'http',
-			 repository: 'http://3.80.53.227:8081/nexus/content/repositories/releases', 
+			 repository: 'http://172.31.2.67:8081/nexus/content/repositories/releases', 
 			 version: '1.2.1'
 
 			}
