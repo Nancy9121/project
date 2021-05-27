@@ -46,7 +46,7 @@ stage('build code') {
 	 nexusUrl: '172.31.2.67:8081/nexus',
 	 nexusVersion: 'nexus2', 
 	protocol: 'http', 
-	repository: ' http://44.192.129.209:8081/nexus/content/repositories/releases',
+	repository: 'http://44.192.129.209:8081/nexus/#view-repositories;releases~browsestorage',
 	 version: '1.2.1'
 		    
 		      }
