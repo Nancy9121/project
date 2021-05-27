@@ -33,12 +33,11 @@ stage('build code') {
         stage('Nexus upload') {
             steps {
 		    echo 'Analyzing....'
-		    script {
-		def mavenPom = readMavenPom file: 'pom.xml'
+		  
                 nexusArtifactUploader artifacts: [
 	[
 		artifactId: 'WebAppCal',
-		classifier: '', file: "/var/lib/jenkins/workspace/pro1/target/WebAppCal-${mavenPom.version}.war",
+		classifier: '', file: "/var/lib/jenkins/workspace/pro1/target/WebAppCal-1.2.1.war",
 	 	type: 'war'
 	]
 			],
@@ -48,8 +47,8 @@ stage('build code') {
 	 nexusVersion: 'nexus2', 
 	protocol: 'http', 
 	repository: 'http://44.192.129.209:8081/nexus/content/repositories/releases',
-	 version: "${mavenPom.version}"
-		    }
+	 version: '1.2.1'
+		    
 		      }
 		}   
     
