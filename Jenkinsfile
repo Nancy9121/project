@@ -52,7 +52,27 @@ stage('build code') {
 		      }
 		}   
     
+	    stage ('docker Build and Tag')
+{
+	steps {
+		echo 'docker.....'
+
+	    sh 'docker.build ('$IMAGE')
+	}
+}
 	    
+	
+	     stage ('docker Image Publish to HUB')
+{
+	steps {
+		echo 'docker.....'
+		docker.withRegistery(nancy21.Mahadev@91)
+	    sh 'docker.image(IMAGE).push() nancy21'
+	}
+}
+	    
+		
+		
 stage ('deploy to tomcat')
 {
 	steps {
