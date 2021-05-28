@@ -51,8 +51,9 @@ stage('build code') {
 		    
 		      }
 		}   
+    }}
     
-	    stage ('docker Build and Tag')
+	/*    stage ('docker Build and Tag')
 {
 	steps {
 		echo 'docker.....'
