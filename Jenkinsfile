@@ -92,4 +92,11 @@ stage('build code') {
 		      }
 		}   
 		**/
-}	} 
+	    
+	    stage('ansible playbook')
+{
+steps {
+	script	{
+		sh '''final_tag=$(echo $Docker_tag | tr -d ' ')}}}
+}	
+} 
