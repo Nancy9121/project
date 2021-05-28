@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webappcal
+  labels:
+    app: webappcal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webappcal
+  template:
+    metadata:
+      labels:
+        app: webappcal
+    spec:
+      containers:
+      - name: webappcal
+        image: nancy21/proj
+        ports:
+        - containerPort: 80
+...
+
+
+
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: webappcal
+spec:
+    type: LoadBalancer
+    ports:
+        targetPort: 3000
+        ports: 80
+    selector:
+        app: webappcal	
+...        
