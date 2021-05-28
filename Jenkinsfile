@@ -37,6 +37,16 @@ stage('build code') {
 	}
 	}
 	    
+	    stage("docker login and push" ) 
+	{
+	
+	withCredentials([string(credentialsId: 'docker_hub_pwd', variable: 'docker_hub_pwd')]) {
+    	sh "docker login -u nancy21 -p ${docker_hub_pwd}"
+	
+}
+	sh "docker push nancy21/WebAppCal-1.2.1.war"
+}
+	    
    /*     stage('Nexus upload') {
             steps {
 		    echo 'Analyzing....'
