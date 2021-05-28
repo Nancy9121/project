@@ -1,0 +1,11 @@
+hosts: all
+become: true
+
+tasks:
+   -name: copy web file to kubernetes clusture
+copy:
+src: web.yml
+dest: /root/
+
+- name: create a Deployment 
+  command: kubectl apply -f /root/web.yml
