@@ -49,6 +49,26 @@ stage('build code') {
 }
 	}
 	    
+	    stage('deploy on kubernetes')
+	{
+	steps  {
+	sshagent(['k8']) {
+    	ssh "scp -o StringHostKeyChecking=no web.yml centos@204.236.197.24":/centos"
+	script	{
+	 try {
+	sh "ssh centos@204.236.197.24 kubectl apply -f ."
+	}
+	  catch(error)
+	{
+	  sh "ssh centos@204.236.197.24 kubectl apply -f ."
+	}
+
+}
+}}
+}
+	    
+	    
+	    
    /*     stage('Nexus upload') {
             steps {
 		    echo 'Analyzing....'
