@@ -52,38 +52,3 @@ stage('build code') {
 		      }
 		}   
     }}
-    
-	/*    stage ('docker Build and Tag')
-{
-	steps {
-		echo 'docker.....'
-
-	    sh 'docker.build ('$IMAGE')
-	}
-}
-	    
-	
-	     stage ('docker Image Publish to HUB')
-{
-	steps {
-		echo 'docker.....'
-		docker.withRegistery(nancy21.Mahadev@91)
-	    sh 'docker.image(IMAGE).push() nancy21'
-	}
-}
-	    
-		
-		
-stage ('deploy to tomcat')
-{
-	steps {
-		echo 'deploying.....'
-
-sshagent(['deploy_user1']) {
-    sh 'cp /var/lib/jenkins/workspace/pro pipeline/target/WebAppCal-1.2.1.war  ~/apache-tomcat-7.0.94/webapps/'
-}
-    }
-}
-	    
-    }
-}
