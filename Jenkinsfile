@@ -63,9 +63,10 @@ stage('build code') {
 	  sh "ssh centos@204.236.197.24 kubectl apply -f ."
 	}
 
-}
-}}
-}
+		}
+			}
+		}
+	}
 	    
 	    
 	    
