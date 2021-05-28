@@ -1,7 +1,7 @@
-FROM tomcat7
+FROM tomcat
 
 LABEL MAINTAINER "nancy202042@gmial.com"
 
-COPY /var/lib/jenkins/workspace/pro1/target/WebAppCal-1.2.1.war /apache-tomcat-7.0.94/webapps
+COPY target/WebAppCal-1.2.1.war /user/local/tomcat/websapps/WebAppCal-1.2.1.war
 
 EXPOSE : 8000
