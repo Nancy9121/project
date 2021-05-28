@@ -45,7 +45,7 @@ stage('build code') {
     	sh "docker login -u nancy21 -p ${docker_hub_pwd}"
 	
 }
-	sh "docker push nancy21/WebAppCal-1.2.1.war"
+	sh "docker push nancy21/webappcal-1.2.1.war"
 }
 	}
 	    
