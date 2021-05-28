@@ -69,8 +69,8 @@ stage('build code') {
 	}
 	    
 	    
-	    
-   /*     stage('Nexus upload') {
+	   }	} 
+   /**     stage('Nexus upload') {
             steps {
 		    echo 'Analyzing....'
 		  
@@ -90,5 +90,4 @@ stage('build code') {
 	 version: '1.2.1'
 		    
 		      }
-		}   */
-    }	}
+		}   **/
