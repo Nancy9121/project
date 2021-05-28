@@ -14,7 +14,7 @@ pipeline {
 		sh 'mvn test'
             }
         }
-        stage('Sonar Analysis') {
+     /*   stage('Sonar Analysis') {
             steps {
                 echo 'Analyzing....'
 		sh 'mvn sonar:sonar \
@@ -22,7 +22,7 @@ pipeline {
   -Dsonar.login=2e023e8c382ee3510db7955f9ae238ec6c56a4ec'
             }
       
-}
+}  */
 stage('build code') {
             steps {
                 echo 'building ..'
@@ -30,7 +30,7 @@ stage('build code') {
             }
         }
     
-        stage('Nexus upload') {
+   /*     stage('Nexus upload') {
             steps {
 		    echo 'Analyzing....'
 		  
@@ -50,5 +50,7 @@ stage('build code') {
 	 version: '1.2.1'
 		    
 		      }
-		}   
-    }}
+		}   */
+
+    }
+}
