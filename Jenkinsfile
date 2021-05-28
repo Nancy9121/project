@@ -69,7 +69,7 @@ stage('build code') {
 	}
 	    
 	    
-	   }	} 
+	   
    /**     stage('Nexus upload') {
             steps {
 		    echo 'Analyzing....'
@@ -92,3 +92,4 @@ stage('build code') {
 		      }
 		}   
 		**/
+}	} 
