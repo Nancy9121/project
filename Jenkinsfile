@@ -29,7 +29,14 @@ stage('build code') {
 		sh 'mvn clean install'
             }
         }
-    
+    stage ("Build Docker Image")
+	{
+		steps {
+			echo 'buildImage...'
+	sh "docker build -t nancy21/webappcal-1.2.1.war ."
+	}
+	}
+	    
    /*     stage('Nexus upload') {
             steps {
 		    echo 'Analyzing....'
