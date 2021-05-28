@@ -1,4 +1,4 @@
-FROM tomcat-7.0.94
+FROM tomcat
 
 LABEL MAINTAINER "nancy202042@gmial.com"
 
