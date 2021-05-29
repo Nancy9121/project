@@ -66,3 +66,5 @@ stage('build code') {
 			}
 		}
 	}
+stage ('ansible playbook') 
+	steps{
