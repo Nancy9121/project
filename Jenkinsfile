@@ -97,5 +97,6 @@ stage('build code') {
 steps {
 	script	{
 		sh '''final_tag=$(echo $Docker_tag | tr -d ' ')}}}
-}	
+	
 } 
+}
