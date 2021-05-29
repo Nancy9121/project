@@ -67,35 +67,3 @@ stage('build code') {
 			}
 		}
 	}
-	    
-	    
-	   
-   /*     stage('Nexus upload') {
-            steps {
-		    echo 'Analyzing....'
-		  
-                nexusArtifactUploader artifacts: [
-	[
-		artifactId: 'WebAppCal',
-		classifier: '', file: "/var/lib/jenkins/workspace/pro1/target/WebAppCal-1.2.1.war",
-	 	type: 'war'
-	]
-			],
-	 credentialsId: 'nexus', 
-	 groupId: 'com.web.cal',
-	 nexusUrl: '172.31.2.67:8081/nexus',
-	 nexusVersion: 'nexus2', 
-	protocol: 'http', 
-	repository: 'http://44.192.129.209:8081/nexus/content/repositories/releases',
-	 version: '1.2.1'
-		    
-		      }
-		}   */
-	    
-	    stage('ansible playbook')
-{
-steps {
-	script	{
-		sh '''final_tag=$(echo $Docker_tag | tr -d ' ')}}}
-}	
-} 
