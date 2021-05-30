@@ -29,3 +29,22 @@ stage('build code') {
             }
         }
 }}   
+ stage ("Build Docker Image")
+	{
+		steps {
+			echo 'buildImage...'
+	sh "docker build -t nancy21/webappcal-1.2.1.war ."
+	}
+	}
+	    
+	    stage("docker login and push") 
+	{
+		steps {
+			echo 'Pushing....'
+	withCredentials([string(credentialsId: 'docker_hub_pwd', variable: 'docker_hub_pwd')]) {
+    	sh "docker login -u nancy21 -p ${docker_hub_pwd}"
+	
+}
+	sh "docker push nancy21/webappcal-1.2.1.war"
+}
+	}
