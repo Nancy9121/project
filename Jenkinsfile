@@ -28,43 +28,4 @@ stage('build code') {
 		sh 'mvn clean install'
             }
         }
-    stage ("Build Docker Image")
-	{
-		steps {
-			echo 'buildImage...'
-	sh "docker build -t nancy21/webappcal-1.2.1.war ."
-	}
-	}
-	    
-	    stage("docker login and push") 
-	{
-		steps {
-			echo 'Pushing....'
-	withCredentials([string(credentialsId: 'docker_hub_pwd', variable: 'docker_hub_pwd')]) {
-    	sh "docker login -u nancy21 -p ${docker_hub_pwd}"
-	
-}
-	sh "docker push nancy21/webappcal-1.2.1.war"
-}
-	}
-	    
-	    stage('deploy on kubernetes')
-	{
-	steps  {
-	sshagent(['k8']) {
-    	ssh "scp -o StringHostKeyChecking=no web.yml centos@204.236.197.24":/centos"
-	script	{
-	 try {
-	sh "ssh centos@204.236.197.24 kubectl apply -f ."
-	}
-	  catch(error)
-	{
-	  sh "ssh centos@204.236.197.24 kubectl apply -f ."
-	}
-
-		}
-			}
-		}
-	}
-stage ('ansible playbook') 
-	steps{
+   
