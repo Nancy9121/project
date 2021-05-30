@@ -6,7 +6,7 @@ pipeline {
 	    stage('git clone') {
             steps {
                 echo 'cloning..'
-		sh git url: 'https://github.com/Nancy9121/project'
+		sh 'git url:https://github.com/Nancy9121/project'
             }
         }
         stage('Validate') {
