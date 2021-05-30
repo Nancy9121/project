@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+	    
+	    stage('git clone') {
+            steps {
+                echo 'cloning..'
+		sh git url: 'https://github.com/Nancy9121/project'
+            }
+        }
         stage('Validate') {
             steps {
                 echo 'Validating..'
