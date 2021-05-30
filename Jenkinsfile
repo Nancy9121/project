@@ -14,13 +14,13 @@ pipeline {
 		sh 'mvn test'
             }
         }
-        stage('Sonar Analysis') {
+      /*  stage('Sonar Analysis') {
             steps {
                 echo 'Analyzing....'
 		sh 'mvn sonar:sonar -Dsonar.host.url=http://172.31.22.50:9000 -Dsonar.login=5f0d4c395b8e3ff0d5f26dc31f4876c10423412d'
             }
-        }
-    }}
+        }*/
+
 
 stage('build code') {
             steps {
@@ -28,4 +28,4 @@ stage('build code') {
 		sh 'mvn clean install'
             }
         }
-   
+}}   
