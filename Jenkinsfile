@@ -3,12 +3,7 @@ pipeline {
 
     stages {
 	    
-	    stage('git clone') {
-            steps {
-                
-		git url: 'https://github.com/Nancy9121/project.git'
-            }
-        }
+	    
         stage('Validate') {
             steps {
                 echo 'Validating..'
