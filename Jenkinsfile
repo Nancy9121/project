@@ -1,9 +1,6 @@
 pipeline {
 	
-	environment {
-    registry = "nancy21"
-    registryCredential = ‘docker hb’
-	}
+	
     agent any
 
     stages {
@@ -48,11 +45,10 @@ stage('build code') {
 	{
 		steps {
 			echo 'buildImage...'
-        script {
-          docker.build registry + ":$BUILD_NUMBER"
-        }
-      }
+	sh "docker build -t nancy21/WebAppCal-1.2.1.war ."
 	}
+      }
+	
 	    
 	    stage("docker login and push") 
 	{
