@@ -7,9 +7,9 @@ pipeline {
 	    {
 		    steps {
 			    echo 'cloning.....'
-	{
 	git credentialsId: 'git-credential', url: 'https://github.com/Nancy9121/project.git'
 	}
+	    }
 	    
 	    
         stage('Validate') {
