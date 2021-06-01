@@ -1,6 +1,6 @@
 pipeline { 
 
-    environment { 
+  /*  environment { 
 
         registry = "nancy21/webcal" 
 
@@ -8,11 +8,50 @@ pipeline {
 
         dockerImage = '' 
 
-    }
+    }*/
 
     agent any 
+    
+    agent any
+    stages {
+	    
+	    stage("Git Clone")
+	    {
+		    steps {
+			    echo 'cloning.....'
+	git credentialsId: 'git-credential', url: 'https://github.com/Nancy9121/project.git'
+	}
+	    }
+	    
+	    
+        stage('Validate') {
+            steps {
+                echo 'Validating..'
+		sh 'mvn compile'
+            }
+        }
+        stage('Unit Test') {
+            steps {
+                echo 'Testing..'
+		sh 'mvn test'
+            }
+        }
+      /*  stage('Sonar Analysis') {
+            steps {
+                echo 'Analyzing....'
+		sh 'mvn sonar:sonar -Dsonar.host.url=http://172.31.22.50:9000 -Dsonar.login=5f0d4c395b8e3ff0d5f26dc31f4876c10423412d'
+            }
+        }*/
 
-    stages { 
+
+stage('build code') {
+            steps {
+                echo 'building ..'
+		sh 'mvn clean install'
+            }
+        }
+
+  /*  stages { 
 
         stage('Cloning our Git') { 
 
@@ -55,4 +94,4 @@ pipeline {
             }
 
         } 
-    }}
+    }}*/
