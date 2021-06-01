@@ -51,17 +51,7 @@ stage('build code') {
             }
         }
 
-  /*  stages { 
-
-        stage('Cloning our Git') { 
-
-            steps { 
-
-                git 'https://github.com/Nancy9121/project.git' 
-
-            }
-
-        } 
+    
 
         stage('Building our image') { 
 
@@ -93,5 +83,5 @@ stage('build code') {
 
             }
 
-        }*/ 
+        }
     }}
