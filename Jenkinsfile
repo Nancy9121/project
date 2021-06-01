@@ -48,7 +48,7 @@ stage('build code') {
 	{
 		steps {
 			echo 'creating image...'
-	sh "docker build -t nancy21/WebAppCal-1.2.1.war ."
+	sh "docker build -t nancy21/webappcal-1.2.1.war ."
 	}
 	}
 	    
