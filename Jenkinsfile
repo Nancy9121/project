@@ -1,7 +1,7 @@
 pipeline {
-	environment 
+/*	environment 
 	{
-/*	dockerImage = '' */
+	dockerImage = '' 
 		registery = 'nancy21/webcal'
 		registeryCredential = 'docker_cred'
 	}*/
@@ -43,17 +43,10 @@ stage('build code') {
 		sh 'mvn clean install'
             }
         }
-}}   
+ 
  stage ("Build Docker Image")
 	{
-		steps {
-			echo 'buildImage...'
-			script {
-					dockerImage = docker.build registery
-				}  
-			
-	/*sh 'docker build -t nancy21/WebAppCal-1.2.1.war .' */
-	} 
+	sh "docker build -t nancy21/WebAppCal-1.2.1.war ."
 	}
 	
 	    
@@ -67,4 +60,4 @@ stage('build code') {
 }
 	sh "docker push nancy21/webappcal-1.2.1.war"
 }
-	}
+	}}}
