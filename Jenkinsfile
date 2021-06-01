@@ -62,4 +62,4 @@ stage('build code') {
 }
 	sh "docker push nancy21/webappcal-1.2.1.war"
 }
-	}}}
+	}}
