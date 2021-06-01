@@ -1,10 +1,10 @@
 pipeline {
-/*	environment 
+	environment 
 	{
 	dockerImage = '' 
 		registery = 'nancy21/webcal'
 		registeryCredential = 'docker_cred'
-	}*/
+	}
  agent any
     stages {
 	    
@@ -43,8 +43,47 @@ stage('build code') {
 		sh 'mvn clean install'
             }
         }
+	    
+	    
+	    
+	    stage('Building our image') { 
+
+            steps { 
+
+                script { 
+
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+
+                }
+
+            } 
+
+        }
+
+        stage('Deploy our image') { 
+
+            steps { 
+
+                script { 
+
+                    docker.withRegistry( '', registryCredential ) { 
+
+                        dockerImage.push() 
+
+                    }
+
+                } 
+
+            }
+
+        } 
+	    
+	    
+	    
+	    
+	    
  
- stage ("Build Docker Image")
+/* stage ("Build Docker Image")
 	{
 		steps {
 			echo 'creating image...'
@@ -56,11 +95,12 @@ stage('build code') {
 	{
 		steps {
 			echo 'Pushing....'
+			docker.withRegistery { ' ' , registryCredential) {
 			withCredentials([string(credentialsId: 'dock_hub', variable: 'dock hub var')]) {
 		sh "docker login -u nancy21 -p ${dock hub var}"
 }
 
 	sh "docker push nancy21/webappcal-1.2.1.war"
 }
-	}
+	} */
 	}}
