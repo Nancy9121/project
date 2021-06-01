@@ -57,8 +57,8 @@ stage('build code') {
 		steps {
 			echo 'Pushing....'
 	withCredentials([string(credentialsId: 'docker_cred', variable: 'docker cred')]) {
-    	sh "docker login -u nancy21 -p ${docker cred}"
-	
+		sh "docker login -u nancy21 -p ${docker cred}"
+}
 }
 	sh "docker push nancy21/webappcal-1.2.1.war"
 }
