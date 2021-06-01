@@ -51,8 +51,13 @@ stage('build code') {
 	sh "docker build -t nancy21/webappcal-1.2.1.war ."
 	}
 	}
-	    
-	    
+	    stage {'docker push') {
+		    steps {
+			    withDockerRegistry([ credentialsId: "docker_cred" , url : " " ]) {
+	    sh 'docker push nancy21/webappcal-1.2.1.war'
+			    }
+		    }
+	    }
 
 /*        stage('Deploy our image') { 
 
