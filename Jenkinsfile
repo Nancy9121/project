@@ -69,7 +69,7 @@ steps
 	withCredentials([string(credentialsId: 'dockhub', variable: 'dockhub')]) {
     	sh "docker login -u nancy21 -p ${dockhub}"
 }
-		sh 'docker push nancy21/webappcal-1'
+		sh 'docker push webappcal-1'
 }}
 }
 
