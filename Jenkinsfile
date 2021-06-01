@@ -1,6 +1,6 @@
 pipeline { 
 
-  /*  environment { 
+    environment { 
 
         registry = "nancy21/webcal" 
 
@@ -8,7 +8,7 @@ pipeline {
 
         dockerImage = '' 
 
-    }*/
+    
 
   
     
