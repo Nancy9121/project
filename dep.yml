@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: webappcal
-        image: nancy21/proj
+        image: "nancy21/webcal:latest"
         ports:
         - containerPort: 80
 ...
