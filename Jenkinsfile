@@ -54,6 +54,7 @@ stage('build code') {
 	    stage ('Docker Push') {
 		    steps {
 			    withDockerRegistry([ credentialsId: "docker_cred" , url : "https://hub.docker.com/repository/docker/nancy21" ]) {
+				    sh "docker login -u nancy21 -p Mahadev@91"
 	    sh 'docker push nancy21/webappcal-1.2.1.war'
 			    }
 		    }
