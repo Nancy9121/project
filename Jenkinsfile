@@ -3,12 +3,12 @@ pipeline {
 	
     agent any
 	
-	environment 
+/*	environment 
 	{
 		dockerImage =''
 		registery ='nancy21'
 		registeryCredential ='docker_hb'
-	}
+	}*/
 
     stages {
 	    
@@ -53,11 +53,12 @@ stage('build code') {
 		steps {
 			echo 'buildImage...'
 			
-				script {
+			/*	script {
 					dockerImage = docker.build registery
-				}
-			}
-/*	sh "docker build -t nancy21/WebAppCal-1.2.1.war ."   */
+				}  */
+			
+	sh 'docker build -t nancy21/WebAppCal-1.2.1.war .' 
+	} 
 	}
       
 	    
