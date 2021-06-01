@@ -44,23 +44,17 @@ stage('build code') {
             }
         }
 	    
+	     stage ("Build Docker Image")
+	{
+		steps {
+			echo 'creating image...'
+	sh "docker build -t nancy21/webappcal-1.2.1.war ."
+	}
+	}
 	    
 	    
-	    stage('Building our image') { 
 
-            steps { 
-
-                script { 
-
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
-
-                }
-
-            } 
-
-        }
-
-        stage('Deploy our image') { 
+/*        stage('Deploy our image') { 
 
             steps { 
 
@@ -83,13 +77,7 @@ stage('build code') {
 	    
 	    
  
-/* stage ("Build Docker Image")
-	{
-		steps {
-			echo 'creating image...'
-	sh "docker build -t nancy21/webappcal-1.2.1.war ."
-	}
-	}
+/*
 	    
 	    stage("docker login and push") 
 	{
