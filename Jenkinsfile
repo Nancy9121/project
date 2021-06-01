@@ -1,8 +1,8 @@
 pipeline {
-/*	environment 
+	environment 
 	{
-	dockerImage = '' 
-		registery = 'nancy21'
+/*	dockerImage = '' */
+		registery = 'nancy21/webcal'
 		registeryCredential = 'docker_cred'
 	}*/
  agent any
@@ -48,15 +48,14 @@ stage('build code') {
 	{
 		steps {
 			echo 'buildImage...'
-			
 			script {
-			/*		dockerImage = docker.build registery
-				}  */
+					dockerImage = docker.build registery
+				}  
 			
-	sh 'docker build -t nancy21/WebAppCal-1.2.1.war .' 
+	/*sh 'docker build -t nancy21/WebAppCal-1.2.1.war .' */
 	} 
 	}
-	}
+	
 	    
 	    stage("docker login and push") 
 	{
