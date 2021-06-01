@@ -52,8 +52,28 @@ stage('build code') {
         }
 
     
+	    stage('build image')
+{
+	steps {
+		script  {
+sh 'docker build -t webappcal-1 .'
+}
+}
+}
+stage('Push image')
+{
+steps
+{
+	script
+	{
+	withCredentials([string(credentialsId: 'dockhub', variable: 'dockhub')]) {
+    	sh "docker login -u nancy21 -p ${dockhub}"
+}
+		sh 'docker push nancy21/webappcal-1'
+}}
+}
 
-        stage('Building our image') { 
+       /* stage('Building our image') { 
 
             steps { 
 
@@ -83,5 +103,5 @@ stage('build code') {
 
             }
 
-        }
+        }*/
     }}
