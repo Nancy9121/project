@@ -5,7 +5,7 @@ tasks:
    -name: copy web file to kubernetes clusture
 copy:
 src: web.yml
-dest: /home
+dest: /root
 
 - name: create a Deployment 
-  command: kubectl apply -f /home/web.yml
+  command: kubectl apply -f /root/web.yml
