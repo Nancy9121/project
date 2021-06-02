@@ -72,7 +72,36 @@ steps
 		sh 'docker push nancy21/webcal'
 }}
 }
+	   
+	    stage('Execute Ansible')
+		{
+	  steps  {
 
+	ansiblePlaybook credentialsId: 'Anprivate-key', disableHostKeyChecking: true, 
+	installation: 'default', 
+	inventory: 'ansi.inv',
+	playbook: 'ansible.yml'
+		}
+	}
+
+	    
+	    
+	    stage('Deploy on K8s') { 
+            steps { 
+
+
+sshagent(['k8']) {
+    sh scp -o StrictHostKeyChecking=no dep.yaml centos@3.87.198.83:/home/centos"
+ 	script {
+	try {
+		sh "ssh centos@3.87.198.83:/home/centos kubectl apply -f ."  }
+	catch (error) {
+		sh "ssh centos@3.87.198.83:/home/centos kubectl create -f ." }
+}
+       }    
+
+            }
+	}
        /* stage('Building our image') { 
 
             steps { 
