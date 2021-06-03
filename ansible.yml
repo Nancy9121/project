@@ -1,7 +1,7 @@
 ---
-- name: call kubeserver
-hosts: kube
-become: true
+- name: update kubeserver
+- hosts: kube
+  become: true
 
 tasks:
  - name: copy deployment file to kubernetes clusture
