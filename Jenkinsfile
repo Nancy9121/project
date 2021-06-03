@@ -76,7 +76,7 @@ steps
 	    stage('Execute Ansible')
 		{
 	  steps  {
-		  ansiblePlaybook become: true, credentialsId: 'Anprivate-key', disableHostKeyChecking: true, installation: 'default', inventory: 'ansi.inv', playbook: 'ansible.yml'
+		  ansiblePlaybook credentialsId: 'Anprivate-key', disableHostKeyChecking: true, installation: 'default', inventory: 'ansi.inv', playbook: 'ansible.yml'
 		}
 	}
 
