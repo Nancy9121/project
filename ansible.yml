@@ -6,6 +6,6 @@
     copy:
     src: dep.yml
     dest: /root
-     - name: create a Deployment
-       command: kubectl apply -f /root/dep.yml
+  - name: create a Deployment
+    command: kubectl apply -f /root/dep.yml
 ...
