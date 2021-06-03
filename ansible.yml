@@ -2,7 +2,7 @@
 - hosts: kube
   become: true
 
-    tasks:
+     tasks:
      - name: copy deployment file to kubernetes clusture
      copy:
      src: dep.yml
