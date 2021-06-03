@@ -5,7 +5,7 @@
   - name: copy deployment file to kubernetes clusture
     copy:
     src: dep.yml
-     dest: /root
+    dest: /root
      - name: create a Deployment
        command: kubectl apply -f /root/dep.yml
 ...
