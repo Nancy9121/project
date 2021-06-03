@@ -1,4 +1,4 @@
-hosts: kube
+hosts: 3.86.99.61
 become: true
 
 tasks:
