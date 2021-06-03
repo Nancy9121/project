@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webappcal
+  name: webcal
   labels:
-    app: webappcal
+    app: webcal
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: webappcal
+      app: webcal
   template:
     metadata:
       labels:
-        app: webappcal
+        app: webcal
     spec:
       containers:
-      - name: webappcal
-        image: "nancy21/webcal:latest"
+      - name: webcal
+        image: "nancy21/webcal"
         ports:
         - containerPort: 80
 ...
@@ -27,12 +27,12 @@ spec:
 apiVersion: apps/v1
 kind: Service
 metadata:
-  name: webappcal
+  name: webcal
 spec:
     type: LoadBalancer
     ports:
         targetPort: 3000
         ports: 80
     selector:
-        app: webappcal	
+        app: webcal	
 ...        
