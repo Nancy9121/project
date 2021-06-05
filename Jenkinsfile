@@ -73,22 +73,22 @@ steps
 }}
 }
 	   
-	/*    stage('Execute Ansible')
+	    stage('Execute Ansible')
 		{
 	  steps  {
 		  ansiblePlaybook credentialsId: 'Anprivate-key', disableHostKeyChecking: true, installation: 'default', inventory: 'ansi.inv', playbook: 'ansible.yml'
 		}
 	}
-*/
+
 	    
 	    
-	    stage('Deploy on K8s') { 
+	/*    stage('Deploy on K8s') { 
             steps { 
 
 
 sshagent(['k8']) {
-    sh "scp -o StrictHostKeyChecking=no dep.yml centos@54.164.169.127:/opt"
- /*	script {
+    sh "scp -o StrictHostKeyChecking=no dep.yml centos@54.164.169.127:/home"
+ 	script {
 	try {
 		sh "ssh centos@54.164.169.127:/home/centos kubectl apply -f ."  }
 	catch (error) {
