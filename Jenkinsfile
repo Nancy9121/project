@@ -87,7 +87,7 @@ steps
 
 
 sshagent(['k8']) {
-    sh "scp dep.yml centos@54.164.169.127:/opt"
+    sh "scp -o StrictHostKeyChecking=no dep.yml centos@54.164.169.127:/opt"
  /*	script {
 	try {
 		sh "ssh centos@54.164.169.127:/home/centos kubectl apply -f ."  }
