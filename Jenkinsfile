@@ -93,11 +93,11 @@ sshagent(['k8']) {
 		sh "ssh centos@54.164.169.127:/home/centos kubectl apply -f ."  }
 	catch (error) {
 		sh "ssh centos@54.164.169.127:/home/centos kubectl create -f ." }
-} */
+} 
        }    
 
             }
-	}
+	}*/
        /* stage('Building our image') { 
 
             steps { 
