@@ -8,7 +8,7 @@
         src: dep.yml
         dest: /home/centos
     - name: create a Deployment
-      command: 'ls -lrt'
+      command: '/usr/local/bin/kubectl get all '
     - name: create a Deployment
       command: '/usr/local/bin/kubectl apply -f /home/centos/dep.yml'
 ...
