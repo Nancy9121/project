@@ -8,5 +8,5 @@
         src: dep.yml
         dest: /home/centos
     - name: create a Deployment
-      command: kubectl apply -f /home/centos/dep.yml
+      command: kubectl apply -f dep.yml
 ...
