@@ -10,5 +10,5 @@
     - name: create a Deployment
       command: 'ls -lrt'
     - name: create a Deployment
-      command: '/usr/local/bin/kubectl apply -f .'
+      command: '/usr/local/bin/kubectl apply -f /home/centos/dep.yml'
 ...
