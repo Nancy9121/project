@@ -8,5 +8,8 @@
         src: dep.yml
         dest: /home/centos
     - name: create a Deployment
-      command: 'whoami ; pwd '
+      command:
+        - whoami
+        - pwd
+        - ifconfig
 ...
