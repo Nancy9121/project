@@ -1,7 +1,6 @@
 ---
 - name: copy files
   hosts: kube
-  become: true
   tasks: 
     - name: copy deployment file to kubernetes clusture
       copy: 
