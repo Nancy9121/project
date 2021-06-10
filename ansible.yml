@@ -6,7 +6,7 @@
     - name: copy deployment file to kubernetes clusture
       copy: 
         src: dep.yml
-        dest: .
+        dest: /home/centos
     - name: create a Deployment
-      command: kubectl apply -f /opt/dep.yml
+      command: kubectl apply -f /home/centos/dep.yml
 ...
