@@ -8,9 +8,7 @@
         src: dep.yml
         dest: /home/centos
     - name: create a Deployment
-      command: whoami
+      command: 'ls -lrt'
     - name: create a Deployment
-      command: pwd
-    - name: create a Deployment
-      command: ifconfig  
+      command: 'kubectl apply -f .'
 ...
