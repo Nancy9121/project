@@ -1,17 +1,16 @@
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: webcal-service
 spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 3001
+  selector:
     app: webcal
-    type: LoadBalancer
-    ports:
-        targetPort: 3000
-        ports: 80
-    selector:
-        app: webcal	
-...   
+...
 
 
 ---
@@ -37,6 +36,3 @@ spec:
         ports:
         - containerPort: 80
 ...
-
-
-     
